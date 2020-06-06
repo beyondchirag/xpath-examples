@@ -46,5 +46,6 @@ public class XpathExamples {
 		node = evaluateXPathNode(document, xpathExpression);  
 		getNodeTextContent(node);
 		outputSeparator();
+		
 	}
 }
