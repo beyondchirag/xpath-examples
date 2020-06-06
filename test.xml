@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<store>
+	<movie year="2000">
+		<title>Gladiator</title>
+		<type>Action</type>
+		<price>100</price>
+	</movie>
+	<movie year="2005">
+		<title>King Kong</title>
+		<type>Action</type>
+		<price>150</price>
+	</movie>
+	<movie year="1995">
+		<title>Seven</title>
+		<type>Drama</type>
+		<price>50</price>
+	</movie>
+</store>

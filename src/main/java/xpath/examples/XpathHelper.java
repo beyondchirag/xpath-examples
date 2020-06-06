@@ -12,29 +12,27 @@ import org.w3c.dom.NodeList;
 
 public class XpathHelper {
 
-	public NodeList evaluateXPathNodeList(Document document, String xpathExpression) throws Exception {
+	public static NodeList evaluateXPathNodeList(Document document, String xpathExpression) {
 		XPath xpath = XPathFactory.newInstance().newXPath();
 		NodeList nodes = null;
 		try {
 			XPathExpression expr = xpath.compile(xpathExpression);
 			nodes = (NodeList) expr.evaluate(document, XPathConstants.NODESET);
 		} catch (XPathExpressionException e) {
-			throw new Exception("Error while evaluating xpath "+xpathExpression+" error "+ e.getMessage());
+			e.printStackTrace();
 		}
 		return nodes;
 	}
 
-	public String evaluateXPath(Document document, String xpathExpression) throws Exception {
+	public static Node evaluateXPathNode(Document document, String xpathExpression) {
 		XPath xpath = XPathFactory.newInstance().newXPath();
-		String data = null;
+		Node data = null;
 		try {
 			XPathExpression expr = xpath.compile(xpathExpression);
-			data = ((Node) expr.evaluate(document, XPathConstants.NODE)).getTextContent();
+			data = (Node) expr.evaluate(document, XPathConstants.NODE);
 		} catch (XPathExpressionException e) {
 			e.printStackTrace();
-		} catch (Exception e) {
-			data = " ";
-		}
+		} 
 		return data;
 	}
 }
